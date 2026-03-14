@@ -54,14 +54,14 @@ Try asking:
 * What is machine learning?
 * Compare machine learning and deep learning
 
-🎯 Use Case
+## 🎯 Use Case
 This project demonstrates how generative AI can help students and learners quickly understand complex topics through AI-generated explanations.
 
-🏆 Hackathon Submission
+## 🏆 Hackathon Submission
 Built for the Amazon Nova Hackathon.
 It showcases how developers can build intelligent assistants using Amazon Nova foundation models through Amazon Bedrock.
 
-📌 Future Improvements
+## 📌 Future Improvements
 * Support document uploads for summarization
 * Add voice interaction
 * Integrate conversation memory
