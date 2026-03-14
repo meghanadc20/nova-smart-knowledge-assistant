@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nova AI Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image:url(https://www.stratospherenetworks.com/blog/wp-content/uploads/2023/09/network-concept-illustration.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white;
+    text-align:center;
+    padding:40px 0;
+}
+
+.container{
+    background:white;
+    color:black;
+    width: 90vw;
+    max-width: 1100px;
+    margin:40px auto;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0px 8px 25px rgba(0,0,0,0.3);
+}
+
+h2{
+    margin-bottom:5px;
+    font-size: large;
+    font-size: 45px;
+}
+textarea{
+    width:100%;
+    background-color:whitesmoke;
+    height:90px;
+    font-size:25px;
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+button{
+    margin-top:10px;
+    padding:10px 20px;
+    font-size:16px;
+    background:#2a5298;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1e3c72;
+}
+
+#answer{
+    margin-top:20px;
+    background-color:whitesmoke;
+    padding:20px;
+    border-radius:8px;
+    text-align:left;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y:auto;
+}
+</style>
+</head>
+
+<body>
+   
+<h2>Nova Smart Knowledge Assistant</h2>
+<p style = "font-size: 30px;">Powered by Amazon Nova on AWS Bedrock</p>
+
+<div class="container">
+<textarea id="question" placeholder="Ask something..."></textarea>
+
+<button onclick="askNova()">Ask Nova</button>
+<div id="answer"></div>
+</div>
+
+<script>
+async function askNova(){
+let question = document.getElementById("question").value;
+document.getElementById("answer").innerText = "Nova is thinking...";
+let response = await fetch("http://127.0.0.1:5000/ask",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body: JSON.stringify({
+question: question
+})
+});
+
+let data = await response.json();
+
+document.getElementById("answer").innerHTML = marked.parse(data.answer);
+
+}
+
+</script>
+
+</body>
+</html>
