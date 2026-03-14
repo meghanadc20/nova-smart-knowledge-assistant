@@ -38,7 +38,7 @@ nova-smart-knowledge-assistant
 └── README.md
 
 ## ▶️ How to Run the Project
-1️⃣ Install dependencies
+### 1️⃣ Install dependencies
 ```bash
 pip install flask flask-cors boto3
 2️⃣ Run the backend server
