@@ -87,7 +87,7 @@ button:hover{
 async function askNova(){
 let question = document.getElementById("question").value;
 document.getElementById("answer").innerText = "Nova is thinking...";
-let response = await fetch("http://127.0.0.1:5000/ask",{
+let response = await fetch("https://nova-smart-knowledge-assistant.onrender.com/ask",{
 method:"POST",
 headers:{
 "Content-Type":"application/json"

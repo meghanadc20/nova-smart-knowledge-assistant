@@ -5,7 +5,12 @@ import boto3
 app = Flask(__name__)
 
 # allow requests from the browser
-CORS(app, resources={r"/*": {"origins": "*"}})
+#CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app, resources={
+    r"/ask": {
+        "origins": ["https://nova-smart-knowledge-assistant.netlify.app"]
+    }
+})
 
 bedrock = boto3.client("bedrock-runtime", region_name="us-east-1")
 
