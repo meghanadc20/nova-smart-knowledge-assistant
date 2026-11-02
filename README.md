@@ -3,6 +3,8 @@
 Nova Smart Knowledge Assistant is a simple generative AI web application powered by **Amazon Nova 2 Lite** through **Amazon Bedrock**.  
 The application allows users to ask questions and receive structured AI-generated explanations instantly.
 
+Live Demo - https://nova-smart-knowledge-assistant.netlify.app/
+
 This project demonstrates how **Amazon Nova foundation models** can be integrated into web applications to build intelligent assistants for learning and knowledge retrieval.
 
  # 🌟 Features 
